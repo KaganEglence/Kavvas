@@ -1,0 +1,135 @@
+<!doctype html>
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Kavvas Control Center</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/jquery.min.js' %}"></script>
+</head>
+
+
+
+
+<body style="background:#d5d8dc !important;">
+
+
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="mx-auto" style="width: %50;">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/index">Home</a> <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/settings">Settings</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/panels_info">Panels Info</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/scanner">Scanner</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/login_page_scan">Login Page Scanner</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/founded_sites">Founded Sites</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/screenshots">Screenshots</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/help">Help</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+  <div class="container">
+    <div class="row">
+      <a href="https://github.com/KaganEglence/">
+        <div class="col-4 mx-auto text-center">
+             <img class="mw-100" src="{% static 'img/logo.png' %}">
+      </a>
+
+    </div>
+  </div>
+  </div>
+
+
+  <div class="container">
+    <h2>Founded Sites</h2>
+    <form method="get">
+      {% csrf_token %}
+      <label for="text">Target IP:</label> <input type="text" class="form-control" id="text" name="get_host"><br>
+      <label for="text">Port:</label> <input type="text" class="form-control" id="text" name="get_port"><br>
+      <label for="text">Source Scan</label>
+      <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="get_source_type">
+       <option value="">All</option>
+       <option value="True">True</option>
+       <option value="False">False</option>
+         </select><br>
+      <label for="text">Result of Login Scan</label>
+      <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="get_result_of_login_scan">
+       <option value="">All</option>
+       <option value="Successful Logged">Logged in</option>
+       <option value="Login Page Found">Login Page Found</option>
+         </select><br>
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="checkBox" name="screenshot_choice">
+        <label class="form-check-label" for="checkBox" value="off">Take ScreenShots</label>
+      </div>
+
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+
+  </div>
+
+
+  <div class="pt-5">
+
+    <table class="table table-striped table-dark">
+      <tbody>
+
+        {% for one_output in founded_outputs %}
+
+        <tr>
+
+          {%for i in one_output%}
+
+          <td>{{i}}</td>
+
+
+          {% endfor %}
+
+        </tr>
+
+
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+
+
+  <footer class="footer">
+    <div class="container text-center">
+      <span class="text-muted"><strong><em>Author: Kağan Eğlence</strong> </em></span>
+    </div>
+  </footer>
+</body>
+
+</html>

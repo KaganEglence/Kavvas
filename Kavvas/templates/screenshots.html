@@ -1,0 +1,91 @@
+<!doctype html>
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Kavvas Control Center</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/jquery.min.js' %}"></script>
+</head>
+
+
+
+
+<body style="background:#d5d8dc !important;">
+
+
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="mx-auto" style="width: %50;">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/index">Home</a> <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/settings">Settings</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/panels_info">Panels Info</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/scanner">Scanner</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/login_page_scan">Login Page Scanner</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/founded_sites">Founded Sites</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/screenshots">Screenshots</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/help">Help</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+  <div class="container">
+    <div class="col-4 mx-auto text-center">
+      <b><h2>Screenshots</h2></b>
+    </div>
+  </div>
+
+
+  <div class="row">
+    {% for screenshot_image in screenshot_files %}
+    <div class="col-md-4" style="padding-top:10px;">
+      <div class="img-thumbnail" style="border:100 ; border-color: black;">
+        <img src=/static/img/screenshots/{{screenshot_image}}_.png alt="{{screenshot_image}}" class="img-responsive" style="width:100%; ">
+        <div class="caption">
+          <p>{{screenshot_image}}</p>
+        </div>
+      </div>
+    </div>
+
+    {% endfor %}
+
+
+  </div>
+
+  <footer class="footer">
+    <div class="container text-center">
+      <span class="text-muted"><strong><em>Author: Kağan Eğlence</strong> </em></span>
+    </div>
+  </footer>
+</body>
+
+</html>

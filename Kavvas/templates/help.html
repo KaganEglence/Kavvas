@@ -1,0 +1,117 @@
+<!doctype html>
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Kavvas Control Center</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/jquery.min.js' %}"></script>
+</head>
+
+
+
+
+<body style="background:#d5d8dc !important;">
+
+
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="mx-auto" style="width: %50;">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/index">Home</a> <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/settings">Settings</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/panels_info">Panels Info</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/scanner">Scanner</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/login_page_scan">Login Page Scanner</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/founded_sites">Founded Sites</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/screenshots">Screenshots</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/help">Help</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="container">
+    <div class="page-header" style="background:#d5d8dc !important;">
+      <h1 class="text-center mt-5"><b>Settings</b></h1>
+
+      <p>Creating config file for database connection.</p>
+      <p><b>Host:</b> Database Address. (i.e., 1.2.3.0)</p>
+      <p><b>Port:</b> Database Port. (i.e., 3306.)</p>
+      <p><b>Name:</b> Database Name for connection. (e.g., custom_db_name or Kavvas.)</p>
+      <p><b>Username:</b> Database Username. (e.g., root, Kavvas_User.)</p>
+
+      <h1 class="text-center mt-5" ><b>Panels Info </b></h1>
+      <p>Knowledge database for known Web Applications.</p>
+      <p>You can add new values to database or read saved values from database. This values using for trying to login founded and identified panels.</p>
+
+      <p>While all fields empty it will returns all values from database.(i.e., username:admin, password:admin)</p>
+
+
+
+      <h1 class="text-center mt-5"><b>Scanner</b></h1>
+
+      <p>This page scans given targets for Web Applications. </p>
+      <p>Target could be a "single ip" or subnet.(e.g., "1.2.3.0" , "1.2.3.0/24" , "1.2.3.0/16"...)</p>
+
+
+      <h1 class="text-center mt-5"><b>Login Page Scanner</b></h1>
+
+      <p>Starts to attempt login for founded targets. </p>
+      <p>Results can be seen in the "Founded Sites" part.</p>
+      <p>Target could be a "single ip" or subnet.(e.g., "1.2.3.0" , "1.2.3.0/24" , "1.2.3.0/16"...)</p>
+
+      <h1 class="text-center mt-5"><b>Founded Sites</b></h1>
+
+      <p>Gets results of scans from database. </p>
+      <p><b>Target Ip:</b> Get results by specific target.(e.g., 1.2.3.0, 1.2.3.0/24 or null for all results.)</p>
+      <p><b>Target Port:</b> Get results by specific port.(e.g., 80, 446, 8000 or null for all results.</p>
+      <p><b>Source Scan:</b> Get results by source scan. For identified login pages, this value should be True.</p>
+      <p><b>Result of Login Scan:</b> The results of attempts to log in.</p>
+      <p class="ml-5"><b>Logged In:</b>The login page was found with login information and logged in. </p>
+      <p class="ml-5"><b>Login Page Found:</b>Gets results of scans from database. </p>
+      <p><b>Take Screenshot:</b> Optionally starts to get screenshots of results. Screenshots can be seen in the "Screenshots" part.</p>
+
+      <h1 class="text-center mt-5"><b>Screenshots</b></h1>
+      <p class="pb-5">If "Take Screenshots" part selected in the "Founded Sites", results can be seen in here. </p>
+
+
+
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container text-center">
+      <span class="text-muted"><strong><em>Author: Kağan Eğlence</strong> </em></span>
+    </div>
+  </footer>
+
+</body>
+
+</html>
