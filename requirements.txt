@@ -10,7 +10,7 @@ DateTime==4.2
 Django==2.1.1
 freeze==1.0.10
 idna==2.7
-lxml==4.2.4
+lxml==4.6.3
 mysql-connector==2.1.6
 netaddr==0.7.19
 pycparser==2.18
