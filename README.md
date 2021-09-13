@@ -1,4 +1,4 @@
-## This project is no longer supported
+<h1 align="center"> This project is no longer supported </h1>
 
 <p align="center">
     <img width=20% src="images/logo.png">
